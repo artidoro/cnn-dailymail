@@ -1,0 +1,4 @@
+cnn_stories_contsel_tags_labels/
+cnn_stories_ner_coref_heuristic_chain_labels/
+
+.vscode/
