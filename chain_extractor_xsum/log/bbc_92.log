@@ -1,0 +1,125 @@
+/home/artidoro/anaconda3/envs/py36/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: spacy.morphology.Morphology size changed, may indicate binary incompatibility. Expected 104 from C header, got 112 from PyObject
+  return f(*args, **kwds)
+/home/artidoro/anaconda3/envs/py36/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: spacy.vocab.Vocab size changed, may indicate binary incompatibility. Expected 96 from C header, got 104 from PyObject
+  return f(*args, **kwds)
+  0%|          | 0/120 [00:00<?, ?it/s]  1%|          | 1/120 [00:00<01:23,  1.43it/s]  2%|▏         | 2/120 [00:01<01:16,  1.55it/s]  2%|▎         | 3/120 [00:01<01:12,  1.62it/s]  3%|▎         | 4/120 [00:02<01:15,  1.54it/s]  4%|▍         | 5/120 [00:03<01:33,  1.24it/s]  5%|▌         | 6/120 [00:03<01:10,  1.61it/s]  6%|▌         | 7/120 [00:04<01:17,  1.46it/s]  7%|▋         | 8/120 [00:06<01:50,  1.02it/s]  8%|▊         | 9/120 [00:08<02:19,  1.25s/it]  8%|▊         | 10/120 [00:08<01:44,  1.05it/s]  9%|▉         | 11/120 [00:10<02:13,  1.22s/it] 10%|█         | 12/120 [00:10<01:37,  1.11it/s] 11%|█         | 13/120 [00:11<01:24,  1.27it/s] 12%|█▏        | 14/120 [00:11<01:14,  1.43it/s] 12%|█▎        | 15/120 [00:12<01:15,  1.39it/s] 13%|█▎        | 16/120 [00:13<01:18,  1.32it/s] 14%|█▍        | 17/120 [00:13<01:11,  1.44it/s] 15%|█▌        | 18/120 [00:14<01:01,  1.66it/s] 16%|█▌        | 19/120 [00:14<01:04,  1.56it/s] 17%|█▋        | 20/120 [00:17<01:56,  1.16s/it] 18%|█▊        | 21/120 [00:19<02:16,  1.38s/it] 18%|█▊        | 22/120 [00:20<02:28,  1.52s/it] 19%|█▉        | 23/120 [00:22<02:35,  1.61s/it] 20%|██        | 24/120 [00:24<02:35,  1.62s/it] 21%|██        | 25/120 [00:26<02:42,  1.71s/it] 22%|██▏       | 26/120 [00:27<02:15,  1.44s/it] 22%|██▎       | 27/120 [00:29<02:28,  1.59s/it] 23%|██▎       | 28/120 [00:29<01:59,  1.29s/it] 24%|██▍       | 29/120 [00:30<01:35,  1.05s/it] 25%|██▌       | 30/120 [00:30<01:15,  1.19it/s] 26%|██▌       | 31/120 [00:32<01:49,  1.23s/it] 27%|██▋       | 32/120 [00:33<01:48,  1.23s/it] 28%|██▊       | 33/120 [00:35<01:56,  1.34s/it] 28%|██▊       | 34/120 [00:35<01:26,  1.00s/it] 29%|██▉       | 35/120 [00:35<01:04,  1.32it/s] 30%|███       | 36/120 [00:36<01:05,  1.28it/s] 31%|███       | 37/120 [00:38<01:22,  1.00it/s] 32%|███▏      | 38/120 [00:39<01:34,  1.15s/it] 32%|███▎      | 39/120 [00:41<01:42,  1.26s/it] 33%|███▎      | 40/120 [00:43<02:00,  1.51s/it] 34%|███▍      | 41/120 [00:45<02:18,  1.75s/it] 35%|███▌      | 42/120 [00:46<01:44,  1.33s/it] 36%|███▌      | 43/120 [00:47<01:54,  1.48s/it] 37%|███▋      | 44/120 [00:48<01:31,  1.21s/it] 38%|███▊      | 45/120 [00:48<01:15,  1.01s/it] 38%|███▊      | 46/120 [00:50<01:31,  1.23s/it] 39%|███▉      | 47/120 [00:51<01:23,  1.15s/it] 40%|████      | 48/120 [00:52<01:19,  1.10s/it] 41%|████      | 49/120 [00:53<01:07,  1.05it/s] 42%|████▏     | 50/120 [00:55<01:31,  1.30s/it] 42%|████▎     | 51/120 [00:56<01:35,  1.38s/it] 43%|████▎     | 52/120 [00:57<01:21,  1.19s/it] 44%|████▍     | 53/120 [00:59<01:28,  1.32s/it] 45%|████▌     | 54/120 [01:01<01:37,  1.48s/it] 46%|████▌     | 55/120 [01:03<01:44,  1.60s/it] 47%|████▋     | 56/120 [01:04<01:40,  1.57s/it] 48%|████▊     | 57/120 [01:04<01:12,  1.15s/it] 48%|████▊     | 58/120 [01:06<01:21,  1.31s/it] 49%|████▉     | 59/120 [01:06<01:01,  1.01s/it] 50%|█████     | 60/120 [01:07<00:49,  1.21it/s] 51%|█████     | 61/120 [01:08<01:06,  1.13s/it] 52%|█████▏    | 62/120 [01:09<00:48,  1.20it/s] 52%|█████▎    | 63/120 [01:10<00:52,  1.09it/s] 53%|█████▎    | 64/120 [01:12<01:08,  1.21s/it] 54%|█████▍    | 65/120 [01:12<00:57,  1.04s/it] 55%|█████▌    | 66/120 [01:13<00:57,  1.06s/it] 56%|█████▌    | 67/120 [01:14<00:44,  1.19it/s] 57%|█████▋    | 68/120 [01:14<00:41,  1.25it/s] 57%|█████▊    | 69/120 [01:16<00:45,  1.11it/s] 58%|█████▊    | 70/120 [01:17<00:58,  1.17s/it] 59%|█████▉    | 71/120 [01:18<00:54,  1.11s/it] 60%|██████    | 72/120 [01:20<00:57,  1.20s/it] 61%|██████    | 73/120 [01:20<00:47,  1.00s/it] 62%|██████▏   | 74/120 [01:20<00:34,  1.35it/s] 62%|██████▎   | 75/120 [01:21<00:26,  1.67it/s] 63%|██████▎   | 76/120 [01:21<00:25,  1.72it/s] 64%|██████▍   | 77/120 [01:23<00:38,  1.12it/s] 65%|██████▌   | 78/120 [01:26<01:01,  1.46s/it] 66%|██████▌   | 79/120 [01:28<01:10,  1.72s/it] 67%|██████▋   | 80/120 [01:30<01:08,  1.71s/it] 68%|██████▊   | 81/120 [01:31<01:00,  1.55s/it] 68%|██████▊   | 82/120 [01:32<01:00,  1.59s/it] 69%|██████▉   | 83/120 [01:34<00:59,  1.60s/it] 70%|███████   | 84/120 [01:36<00:55,  1.55s/it] 71%|███████   | 85/120 [01:36<00:39,  1.14s/it] 72%|███████▏  | 86/120 [01:38<00:49,  1.44s/it] 72%|███████▎  | 87/120 [01:39<00:44,  1.34s/it] 73%|███████▎  | 88/120 [01:40<00:41,  1.31s/it] 74%|███████▍  | 89/120 [01:41<00:32,  1.06s/it] 75%|███████▌  | 90/120 [01:42<00:36,  1.22s/it] 76%|███████▌  | 91/120 [01:44<00:41,  1.41s/it] 77%|███████▋  | 92/120 [01:46<00:45,  1.62s/it] 78%|███████▊  | 93/120 [01:47<00:33,  1.25s/it] 78%|███████▊  | 94/120 [01:47<00:29,  1.13s/it] 79%|███████▉  | 95/120 [01:48<00:21,  1.16it/s] 80%|████████  | 96/120 [01:48<00:18,  1.31it/s] 81%|████████  | 97/120 [01:50<00:23,  1.02s/it] 82%|████████▏ | 98/120 [01:51<00:20,  1.09it/s] 82%|████████▎ | 99/120 [01:51<00:18,  1.13it/s] 83%|████████▎ | 100/120 [01:51<00:13,  1.49it/s] 84%|████████▍ | 101/120 [01:54<00:22,  1.21s/it] 85%|████████▌ | 102/120 [01:56<00:24,  1.36s/it] 86%|████████▌ | 103/120 [01:57<00:24,  1.45s/it] 87%|████████▋ | 104/120 [01:58<00:18,  1.17s/it] 88%|████████▊ | 105/120 [01:59<00:17,  1.17s/it] 88%|████████▊ | 106/120 [02:00<00:15,  1.11s/it] 89%|████████▉ | 107/120 [02:01<00:13,  1.00s/it] 90%|█████████ | 108/120 [02:01<00:10,  1.11it/s] 91%|█████████ | 109/120 [02:03<00:12,  1.18s/it] 92%|█████████▏| 110/120 [02:05<00:13,  1.31s/it] 92%|█████████▎| 111/120 [02:07<00:13,  1.53s/it] 93%|█████████▎| 112/120 [02:08<00:11,  1.44s/it] 94%|█████████▍| 113/120 [02:10<00:11,  1.68s/it] 95%|█████████▌| 114/120 [02:11<00:09,  1.51s/it] 96%|█████████▌| 115/120 [02:12<00:06,  1.36s/it] 97%|█████████▋| 116/120 [02:13<00:04,  1.20s/it] 98%|█████████▊| 117/120 [02:15<00:03,  1.20s/it] 98%|█████████▊| 118/120 [02:15<00:02,  1.08s/it] 99%|█████████▉| 119/120 [02:16<00:01,  1.10s/it]100%|██████████| 120/120 [02:17<00:00,  1.20it/s]100%|██████████| 120/120 [02:17<00:00,  1.14s/it]
+../bbc_stories_tokenized_reduced_1/chunk_92/34287968
+../bbc_stories_tokenized_reduced_1/chunk_92/40281100
+../bbc_stories_tokenized_reduced_1/chunk_92/38010178
+../bbc_stories_tokenized_reduced_1/chunk_92/36578785
+../bbc_stories_tokenized_reduced_1/chunk_92/36073266
+../bbc_stories_tokenized_reduced_1/chunk_92/33062423
+../bbc_stories_tokenized_reduced_1/chunk_92/40605653
+../bbc_stories_tokenized_reduced_1/chunk_92/36441206
+../bbc_stories_tokenized_reduced_1/chunk_92/18711127
+../bbc_stories_tokenized_reduced_1/chunk_92/36293843
+../bbc_stories_tokenized_reduced_1/chunk_92/28696000
+../bbc_stories_tokenized_reduced_1/chunk_92/32188863
+../bbc_stories_tokenized_reduced_1/chunk_92/37149756
+../bbc_stories_tokenized_reduced_1/chunk_92/20937058
+../bbc_stories_tokenized_reduced_1/chunk_92/35511409
+../bbc_stories_tokenized_reduced_1/chunk_92/37437454
+../bbc_stories_tokenized_reduced_1/chunk_92/35959982
+../bbc_stories_tokenized_reduced_1/chunk_92/36504965
+../bbc_stories_tokenized_reduced_1/chunk_92/36675983
+../bbc_stories_tokenized_reduced_1/chunk_92/38778957
+../bbc_stories_tokenized_reduced_1/chunk_92/39587226
+../bbc_stories_tokenized_reduced_1/chunk_92/32608294
+../bbc_stories_tokenized_reduced_1/chunk_92/28087350
+../bbc_stories_tokenized_reduced_1/chunk_92/35235316
+../bbc_stories_tokenized_reduced_1/chunk_92/24802888
+../bbc_stories_tokenized_reduced_1/chunk_92/34991822
+../bbc_stories_tokenized_reduced_1/chunk_92/33676028
+../bbc_stories_tokenized_reduced_1/chunk_92/35832786
+../bbc_stories_tokenized_reduced_1/chunk_92/32452817
+../bbc_stories_tokenized_reduced_1/chunk_92/40382750
+../bbc_stories_tokenized_reduced_1/chunk_92/39664839
+../bbc_stories_tokenized_reduced_1/chunk_92/35093900
+../bbc_stories_tokenized_reduced_1/chunk_92/38353625
+../bbc_stories_tokenized_reduced_1/chunk_92/36207647
+../bbc_stories_tokenized_reduced_1/chunk_92/39254358
+../bbc_stories_tokenized_reduced_1/chunk_92/41074679
+../bbc_stories_tokenized_reduced_1/chunk_92/21931110
+../bbc_stories_tokenized_reduced_1/chunk_92/26650621
+../bbc_stories_tokenized_reduced_1/chunk_92/34413704
+../bbc_stories_tokenized_reduced_1/chunk_92/35379470
+../bbc_stories_tokenized_reduced_1/chunk_92/31734557
+../bbc_stories_tokenized_reduced_1/chunk_92/37676022
+../bbc_stories_tokenized_reduced_1/chunk_92/34058329
+../bbc_stories_tokenized_reduced_1/chunk_92/39333110
+../bbc_stories_tokenized_reduced_1/chunk_92/40925438
+../bbc_stories_tokenized_reduced_1/chunk_92/30520643
+../bbc_stories_tokenized_reduced_1/chunk_92/38275877
+../bbc_stories_tokenized_reduced_1/chunk_92/35307764
+../bbc_stories_tokenized_reduced_1/chunk_92/38465626
+../bbc_stories_tokenized_reduced_1/chunk_92/38637857
+../bbc_stories_tokenized_reduced_1/chunk_92/39019715
+../bbc_stories_tokenized_reduced_1/chunk_92/39997600
+../bbc_stories_tokenized_reduced_1/chunk_92/19867766
+../bbc_stories_tokenized_reduced_1/chunk_92/35775318
+../bbc_stories_tokenized_reduced_1/chunk_92/34915842
+../bbc_stories_tokenized_reduced_1/chunk_92/37285349
+../bbc_stories_tokenized_reduced_1/chunk_92/39501966
+../bbc_stories_tokenized_reduced_1/chunk_92/33200142
+../bbc_stories_tokenized_reduced_1/chunk_92/32788872
+../bbc_stories_tokenized_reduced_1/chunk_92/39838036
+../bbc_stories_tokenized_reduced_1/chunk_92/14992220
+../bbc_stories_tokenized_reduced_1/chunk_92/36976822
+../bbc_stories_tokenized_reduced_1/chunk_92/30208693
+../bbc_stories_tokenized_reduced_1/chunk_92/35576278
+../bbc_stories_tokenized_reduced_1/chunk_92/27375939
+../bbc_stories_tokenized_reduced_1/chunk_92/38199728
+../bbc_stories_tokenized_reduced_1/chunk_92/37900290
+../bbc_stories_tokenized_reduced_1/chunk_92/40094011
+../bbc_stories_tokenized_reduced_1/chunk_92/40699312
+../bbc_stories_tokenized_reduced_1/chunk_92/22715930
+../bbc_stories_tokenized_reduced_1/chunk_92/32046982
+../bbc_stories_tokenized_reduced_1/chunk_92/33509656
+../bbc_stories_tokenized_reduced_1/chunk_92/29770132
+../bbc_stories_tokenized_reduced_1/chunk_92/34825370
+../bbc_stories_tokenized_reduced_1/chunk_92/40819961
+../bbc_stories_tokenized_reduced_1/chunk_92/23683976
+../bbc_stories_tokenized_reduced_1/chunk_92/37588549
+../bbc_stories_tokenized_reduced_1/chunk_92/39747570
+../bbc_stories_tokenized_reduced_1/chunk_92/37786163
+../bbc_stories_tokenized_reduced_1/chunk_92/39103389
+../bbc_stories_tokenized_reduced_1/chunk_92/36811029
+../bbc_stories_tokenized_reduced_1/chunk_92/39910439
+../bbc_stories_tokenized_reduced_1/chunk_92/34182670
+../bbc_stories_tokenized_reduced_1/chunk_92/36738219
+../bbc_stories_tokenized_reduced_1/chunk_92/38716416
+../bbc_stories_tokenized_reduced_1/chunk_92/39175740
+../bbc_stories_tokenized_reduced_1/chunk_92/32941421
+../bbc_stories_tokenized_reduced_1/chunk_92/31382922
+../bbc_stories_tokenized_reduced_1/chunk_92/33876261
+../bbc_stories_tokenized_reduced_1/chunk_92/38951926
+../bbc_stories_tokenized_reduced_1/chunk_92/29310445
+../bbc_stories_tokenized_reduced_1/chunk_92/12494821
+../bbc_stories_tokenized_reduced_1/chunk_92/37361550
+../bbc_stories_tokenized_reduced_1/chunk_92/37069629
+../bbc_stories_tokenized_reduced_1/chunk_92/38555203
+../bbc_stories_tokenized_reduced_1/chunk_92/34537156
+../bbc_stories_tokenized_reduced_1/chunk_92/25823215
+../bbc_stories_tokenized_reduced_1/chunk_92/35645816
+../bbc_stories_tokenized_reduced_1/chunk_92/33366037
+../bbc_stories_tokenized_reduced_1/chunk_92/39430645
+../bbc_stories_tokenized_reduced_1/chunk_92/17279419
+../bbc_stories_tokenized_reduced_1/chunk_92/38872858
+../bbc_stories_tokenized_reduced_1/chunk_92/38110677
+../bbc_stories_tokenized_reduced_1/chunk_92/36140400
+../bbc_stories_tokenized_reduced_1/chunk_92/34743326
+../bbc_stories_tokenized_reduced_1/chunk_92/36017088
+../bbc_stories_tokenized_reduced_1/chunk_92/36892543
+../bbc_stories_tokenized_reduced_1/chunk_92/32297446
+../bbc_stories_tokenized_reduced_1/chunk_92/40531134
+../bbc_stories_tokenized_reduced_1/chunk_92/35898083
+../bbc_stories_tokenized_reduced_1/chunk_92/34639834
+../bbc_stories_tokenized_reduced_1/chunk_92/35167933
+../bbc_stories_tokenized_reduced_1/chunk_92/35451847
+../bbc_stories_tokenized_reduced_1/chunk_92/36373337
+../bbc_stories_tokenized_reduced_1/chunk_92/30841905
+../bbc_stories_tokenized_reduced_1/chunk_92/37218596
+../bbc_stories_tokenized_reduced_1/chunk_92/40186893
+../bbc_stories_tokenized_reduced_1/chunk_92/40456403
+../bbc_stories_tokenized_reduced_1/chunk_92/37512508
+../bbc_stories_tokenized_reduced_1/chunk_92/35714680

@@ -16,14 +16,14 @@ END_TOKENS = ['.', '!', '?', '...', "'", "`", '"', dm_single_close_quote, dm_dou
 SENTENCE_START = '<s>'
 SENTENCE_END = '</s>'
 
-all_train_urls = "../url_lists/all_train.txt"
-all_val_urls = "../url_lists/all_val.txt"
-all_test_urls = "../url_lists/all_test.txt"
+all_train_urls = "../url_lists/url_lists_reduced_1/bbc_ids_train.txt"
+all_val_urls = "../url_lists/url_lists_reduced_1/bbc_ids_val.txt"
+all_test_urls = "../url_lists/url_lists_reduced_1/bbc_ids_test.txt"
 
 
-# These are the number of .story files we expect there to be in cnn_stories_dir and dm_stories_dir
-num_expected_cnn_stories = 92579
-num_expected_dm_stories = 219506
+# These are the number of .story files we expect there to be in bbc_stories_dir
+# num_expected_stories = 226711
+num_expected_stories = 12000
 
 VOCAB_SIZE = 200000
 CHUNK_SIZE = 1000  # num examples per chunk, for the chunked data
@@ -114,29 +114,14 @@ def fix_missing_period(line):
 
 
 def get_art_abs_lbs(story_file, label_file, chains_file):
-    lines = read_text_file(story_file)
+    article = open(story_file + ".article", "r").read()
+    abstract = open(story_file + ".abstract", "r").read()
+
+    article_lines = article.split('<split1>')
+
     labels = read_text_file(label_file)
     chains = open(chains_file, "r").read()
 
-    # Lowercase everything
-    lines = [line.lower() for line in lines]
-
-    # Put periods on the ends of lines that are missing them (this is a problem in the dataset because many image captions don't end in periods; consequently they end up in the body of the article as run-on sentences)
-    lines = [fix_missing_period(line) for line in lines]
-
-    # Separate out article and abstract sentences
-    article_lines = []
-    highlights = []
-    next_is_highlight = False
-    for idx, line in enumerate(lines):
-        if line == "":
-            continue  # empty line
-        elif line.startswith("@highlight"):
-            next_is_highlight = True
-        elif next_is_highlight:
-            highlights.append(line)
-        else:
-            article_lines.append(line)
     if len(labels) == 0 and len(article_lines)==0:
         labels = ""
     elif len(labels) == 0 and len(article_lines)!=0:
@@ -161,18 +146,15 @@ def get_art_abs_lbs(story_file, label_file, chains_file):
             print(a[i],b[i])
         exit()
 
-    # Make abstract into a signle string, putting <s> and </s> tags around the sentences
-    abstract = ' '.join(["%s %s %s" % (SENTENCE_START, sent, SENTENCE_END) for sent in highlights])
-
     return article, abstract, labels, chains
 
 
 def write_to_bin(url_file, out_file, makevocab=False):
     """Reads the tokenized .story files corresponding to the urls listed in the url_file and writes them to a out_file."""
     print("Making bin file for URLs listed in %s..." % url_file)
-    url_list = read_text_file(url_file)
-    url_hashes = get_url_hashes(url_list)
-    story_fnames = [s + ".story" for s in url_hashes]
+    story_fnames = read_text_file(url_file)
+    # url_hashes = get_url_hashes(url_list)
+    # story_fnames = [s + ".story" for s in url_hashes]
     num_stories = len(story_fnames)
 
     if makevocab:
@@ -185,39 +167,32 @@ def write_to_bin(url_file, out_file, makevocab=False):
                 idx, num_stories, float(idx) * 100.0 / float(num_stories)))
 
             # Look in the tokenized story dirs to find the .story file corresponding to this url
-            if os.path.isfile(os.path.join(cnn_tokenized_stories_dir, s)):
-                story_file = os.path.join(cnn_tokenized_stories_dir, s)
-            elif os.path.isfile(os.path.join(dm_tokenized_stories_dir, s)):
-                story_file = os.path.join(dm_tokenized_stories_dir, s)
-            else: 
+            if os.path.isfile(os.path.join(bbc_tokenized_stories_dir, s + '.article')) and os.path.isfile(os.path.join(bbc_tokenized_stories_dir, s + '.abstract')):
+                story_file = os.path.join(bbc_tokenized_stories_dir, s)
+            else:
                 print(
-                    "Error: Couldn't find tokenized story file %s in either tokenized story directories %s and %s. Was there an error during tokenization?" % (
-                    s, cnn_tokenized_stories_dir, dm_tokenized_stories_dir))
+                    "Error: Couldn't find tokenized story file %s in tokenized story directory %s. Was there an error during tokenization?" % (
+                    s, bbc_tokenized_stories_dir))
                 # Check again if tokenized stories directories contain correct number of files
-                print("Checking that the tokenized stories directories %s and %s contain correct number of files..." % (
-                cnn_tokenized_stories_dir, dm_tokenized_stories_dir))
-                check_num_stories(cnn_tokenized_stories_dir, num_expected_cnn_stories)
-                check_num_stories(dm_tokenized_stories_dir, num_expected_dm_stories)
+                print("Checking that the tokenized stories directory %s contains correct number of files..." % (
+                bbc_tokenized_stories_dir))
+                check_num_stories(bbc_tokenized_stories_dir, num_expected_stories * 2)
                 raise Exception(
-                    "Tokenized stories directories %s and %s contain correct number of files but story file %s found in neither." % (
-                    cnn_tokenized_stories_dir, dm_tokenized_stories_dir, s))
-            if os.path.isfile(os.path.join(cnn_label_dir, s)):
-                label_file = os.path.join(cnn_label_dir, s)
-            elif os.path.isfile(os.path.join(dm_label_dir, s)):
-                label_file = os.path.join(dm_label_dir, s)
+                    "Tokenized stories directory %s contains correct number of files but story file %s found in neither." % (
+                    bbc_tokenized_stories_dir, s))
+            if os.path.isfile(os.path.join(bbc_label_dir, s)):
+                label_file = os.path.join(bbc_label_dir, s)
             else:
                 print(
-                    "Error: Couldn't find label story file %s in either label directories %s and %s. Was there an error during labeling?" % (
-                        s, cnn_label_dir, dm_label_dir))
-            
-            if os.path.isfile(os.path.join(cnn_chains_dir, s)):
-                chains_file = os.path.join(cnn_chains_dir, s)
-            elif os.path.isfile(os.path.join(dm_chains_dir, s)):
-                chains_file = os.path.join(dm_chains_dir, s)
+                    "Error: Couldn't find label story file %s in either label directory %s. Was there an error during labeling?" % (
+                        s, bbc_label_dir))
+
+            if os.path.isfile(os.path.join(bbc_chains_dir, s)):
+                chains_file = os.path.join(bbc_chains_dir, s)
             else:
                 print(
-                    "Error: Couldn't find chains story file %s in either label directories %s and %s. Was there an error during labeling?" % (
-                        s, cnn_chains_dir, dm_chains_dir))
+                    "Error: Couldn't find chains story file %s in either label directory %s. Was there an error during labeling?" % (
+                        s, bbc_chains_dir))
             print("processing: "+s)
             # Get the strings to write to .bin file
             article, abstract, labels, chains = get_art_abs_lbs(story_file, label_file, chains_file)
@@ -253,35 +228,27 @@ def write_to_bin(url_file, out_file, makevocab=False):
                 writer.write(word + ' ' + str(count) + '\n')
         print("Finished writing vocab file")
 
-
 def check_num_stories(stories_dir, num_expected):
     num_stories = len(os.listdir(stories_dir))
     if num_stories != num_expected:
         raise Exception(
             "stories directory %s contains %i files but should contain %i" % (stories_dir, num_stories, num_expected))
-
+    return
 
 if __name__ == '__main__':
     # Directory names for input and output directories.
-
-    cnn_tokenized_stories_dir = '../cnn_stories_tokenized'
-    cnn_label_dir = '../cnn_stories_contsel_tags_labels'
-    cnn_chains_dir = '../cnn_stories_ner_coref_heuristic_chain_labels'
-    dm_tokenized_stories_dir = '../dm_stories_tokenized'
-    dm_label_dir = '../dm_stories_contsel_tags_labels'
-    dm_chains_dir = '../dm_stories_ner_coref_heuristic_chain_labels'
-    finished_files_dir = "../finished_files_wlabels_wner_wcoref_chains"
+    bbc_tokenized_stories_dir = '../bbc_stories_tokenized_reduced_1'
+    bbc_label_dir = '../bbc_reduced_1_contsel_tags_labels'
+    bbc_chains_dir = '../bbc_reduced_1_ner_coref_heuristic_chain_labels'
+    finished_files_dir = "../finished_files_wlabels_wner_wcoref_chains_reduced_1"
     chunks_dir = os.path.join(finished_files_dir, "chunked")
 
 
     # Check the stories directories contain the correct number of .story files
     # May skip this for new dataset where we don't know num.
-    check_num_stories(cnn_tokenized_stories_dir, num_expected_cnn_stories)
-    check_num_stories(dm_tokenized_stories_dir, num_expected_dm_stories)
-    check_num_stories(cnn_label_dir, num_expected_cnn_stories)
-    check_num_stories(dm_label_dir, num_expected_dm_stories)
-    check_num_stories(cnn_chains_dir, num_expected_cnn_stories)
-    check_num_stories(dm_chains_dir, num_expected_dm_stories)
+    check_num_stories(bbc_tokenized_stories_dir, num_expected_stories * 2) # One for the article and one for the abstract file
+    check_num_stories(bbc_label_dir, num_expected_stories)
+    check_num_stories(bbc_chains_dir, num_expected_stories)
 
     # # Create some new directories
     if not os.path.exists(finished_files_dir): os.makedirs(finished_files_dir)

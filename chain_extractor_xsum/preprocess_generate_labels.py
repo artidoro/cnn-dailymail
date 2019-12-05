@@ -201,7 +201,7 @@ def main():
     # Directory names for input and output directories.
 
     parser = argparse.ArgumentParser(description='Script to preprocess tokenized files')
-    parser.add_argument('--story_json', type=str, default=None, help='file containing list of stories')
+    # parser.add_argument('--story_json', type=str, default=None, help='file containing list of stories')
     parser.add_argument('--input_dir', type=str, default=None, help='location of the input dir')
     parser.add_argument('--ner_output_dir', type=str, default=None, help='location of the output dir')
     parser.add_argument('--contsel_output_dir', type=str, default=None, help='location of the output dir')
@@ -211,9 +211,9 @@ def main():
         print("Folder: "+args.input_dir+" doesn't exist")
         exit()
 
-    if not os.path.exists(args.story_json):
-        print("Folder: "+args.story_json+" doesn't exist")
-        exit()
+    # if not os.path.exists(args.story_json):
+    #     print("Folder: "+args.story_json+" doesn't exist")
+    #     exit()
 
     # cnn_stories_dir = '../cnn_stories_tokenized'
     # cnn_ner_label_dir = '../cnn_stories_ner_heuristic_chain_labels'
@@ -247,13 +247,12 @@ def main():
     ner_out_dir = args.ner_output_dir
     contsel_out_dir = args.contsel_output_dir
 
-    with open(args.story_json) as json_data:
-        train_dev_test_dict = json.load(json_data)
+    stories = os.listdir(stories_dir)
 
-    stories_train = train_dev_test_dict['train']
-    stories_test = train_dev_test_dict['test']
-    stories_validation = train_dev_test_dict['validation']
-    stories = stories_train + stories_test + stories_validation
+    stories_set = set()
+    for story in stories:
+        stories_set.add(story[:story.find('.')])
+    stories = list(stories_set)
 
     write_labels(ner_out_dir, contsel_out_dir, stories, stories_dir)
 
